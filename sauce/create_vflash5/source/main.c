@@ -20,12 +20,12 @@
 #include <lv2_syscall.h>
 #include <udp_printf.h>
 
-#define VFLASH_DEV_ID									0x100000000000001ull					//vflash 5 device id
-#define VFLASH_REGION_START_SECTOR		0x73a00ull										//startsector
+#define VFLASH_DEV_ID									0x100000000000001ull
+#define VFLASH_REGION_START_SECTOR		0x73a00ull
 #define VFLASH_REGION_SECTOR_COUNT		0xc000ull 										//25MB should be more than enough for petitboot :)
-#define VFLASH_REGION_LAID						0x1070000002000001ull					//
+#define VFLASH_REGION_LAID						0x1070000002000001ull
 
-//main
+/* main */
 int main(int argc, char **argv)
 {
 	uint32_t dev_handle;
@@ -40,14 +40,12 @@ int main(int argc, char **argv)
 
 	dev_handle = 0;
 
-	//storage öffnen und device handle bekommen
 	result = lv2_storage_open(VFLASH_DEV_ID, &dev_handle);
 	if (result) {
 		PRINTF("%s:%d: lv2_storage_open failed (0x%08x)\n", __func__, __LINE__, result);
 		goto done;
 	}
 
-	//
 	result = lv2_storage_create_region(dev_handle, VFLASH_REGION_START_SECTOR, VFLASH_REGION_SECTOR_COUNT,
 		0, VFLASH_REGION_LAID, &region_id);
 	if (result) {

@@ -23,7 +23,7 @@
 #define VFLASH_DEV_ID													0x100000000000001ull
 #define VFLASH_REGION_ID											7
 
-//main
+/* main */
 int main(int argc, char **argv){
 	uint32_t dev_handle;
 	int result;

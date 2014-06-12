@@ -36,7 +36,7 @@
 #define VFLASH_PARTITION_TABLE_7TH_REGION_OFFSET			0x300ull
 #define VFLASH_7TH_REGION_NEW_START_SECTOR						0x7fa00ull
 
-//setup_vflash
+/* setup_vflash */
 static int setup_vflash(void){
 	uint32_t dev_handle;
 	int start_sector, sector_count;
@@ -119,7 +119,7 @@ done:
 	return result;
 }
 
-//main
+/* main */
 int main(int argc, char **argv){
 	int result;
 

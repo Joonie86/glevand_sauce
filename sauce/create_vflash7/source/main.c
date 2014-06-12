@@ -22,10 +22,10 @@
 
 #define VFLASH_DEV_ID									0x100000000000001ull
 #define VFLASH_REGION_START_SECTOR		0x80000ull
-#define VFLASH_REGION_SECTOR_COUNT		0x5000000ull 											//40GB for my beloved Linux
+#define VFLASH_REGION_SECTOR_COUNT		0x5000000ull 											/* 40GB for my beloved Linux */
 #define VFLASH_REGION_LAID						0x1070000002000001ull
 
-//main
+/* main */ 
 int main(int argc, char **argv){
 	uint32_t dev_handle;
 	uint64_t region_id;

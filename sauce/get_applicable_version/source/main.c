@@ -45,7 +45,6 @@ int main(int argc, char **argv)
 
 	PRINTF("%s:%d: start\n", __func__, __LINE__);
 
-	//lv2syscall7(863, );
 	result = lv2_ss_update_mgr_if(UPDATE_MGR_PACKET_ID_GET_APPL_VER, 1, (uint64_t) &get_appl_ver, 0, 0, 0, 0);
 	if (result) {
 		PRINTF("%s:%d: lv1_ss_update_mgr_if(GET_APPL_VER) failed (0x%08x)\n",

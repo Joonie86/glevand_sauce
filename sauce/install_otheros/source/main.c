@@ -44,7 +44,7 @@ static const char *petitboot_path[] = {
 	"/dev_usb007/" PETITBOOT_FILENAME,
 };
 
-//open_petitboot image
+/* open_petitboot image */
 static FILE *open_petitboot(void){
 #define N(a)	(sizeof(a) / sizeof(a[0]))
 
@@ -71,7 +71,7 @@ static FILE *open_petitboot(void){
 #undef N
 }
 
-//main
+/* main */
 int main(int argc, char **argv){
 #define MIN(a, b)	((a) <= (b) ? (a) : (b))
 
@@ -129,7 +129,6 @@ int main(int argc, char **argv){
 		goto done;
 	}
 
-	//capacity von vflash5 ausgeben
 	PRINTF("%s:%d: capacity (0x%016llx)\n", __func__, __LINE__, info.capacity);
 
 	if (info.capacity < (VFLASH5_HEADER_SECTORS + VFLASH5_OS_DB_AREA_SECTORS + file_sectors)) {
@@ -137,7 +136,6 @@ int main(int argc, char **argv){
 		goto done;
 	}
 	
-	//device vflash5 öffnen
 	result = lv2_storage_open(VFLASH5_DEV_ID, &dev_handle);
 	if (result) {
 		PRINTF("%s:%d: lv2_storage_open failed (0x%08x)\n", __func__, __LINE__, result);
@@ -175,7 +173,6 @@ int main(int argc, char **argv){
 	db->index_16 = 836;
 	db->count_16 = 57;
 
-	//schreiben
 	result = lv2_storage_write(dev_handle, 0, start_sector, sector_count, buf, &unknown2, 0);
 	if (result) {
 		PRINTF("%s:%d: lv2_storage_write failed (0x%08x)\n", __func__, __LINE__, result);

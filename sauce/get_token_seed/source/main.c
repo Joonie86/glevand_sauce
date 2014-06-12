@@ -27,7 +27,7 @@
 #define EPROM_QA_FLAG_OFFSET									0x48c0a
 #define TOKEN_SIZE														80
 
-//main
+/* main */
 int main(int argc, char **argv){
 	uint8_t value, seed[TOKEN_SIZE], token[TOKEN_SIZE];
 	int i, result;
@@ -38,7 +38,6 @@ int main(int argc, char **argv){
 
 	PRINTF("%s:%d: start\n", __func__, __LINE__);
 	
-	//lv2syscall7(863, ) Update Manager Interface
 	result = lv2_ss_update_mgr_if(UPDATE_MGR_PACKET_ID_READ_EPROM, EPROM_QA_FLAG_OFFSET, (uint64_t) &value, 0, 0, 0, 0);
 	if (result) {
 		PRINTF("%s:%d: lv1_ss_update_mgr_if(READ_EPROM) failed (0x%08x)\n", __func__, __LINE__, result);
@@ -47,7 +46,6 @@ int main(int argc, char **argv){
 
 	PRINTF("%s:%d: QA flag 0x%02x\n", __func__, __LINE__, value);
 	
-	//lv2syscall7(863, )
 	result = lv2_ss_update_mgr_if(UPDATE_MGR_PACKET_ID_GET_TOKEN_SEED, (uint64_t) token, TOKEN_SIZE, (uint64_t) seed, TOKEN_SIZE, 0, 0);
 	if (result) {
 		PRINTF("%s:%d: lv1_ss_update_mgr_if(GET_TOKEN_SEED) failed (0x%08x)\n", __func__, __LINE__, result);
@@ -70,7 +68,6 @@ int main(int argc, char **argv){
 
 	PRINTF("%s:%d: end\n", __func__, __LINE__);
 	
-	//lv2syscall3(392, )
 	lv2_sm_ring_buzzer(0x1004, 0xa, 0x1b6);
 
 done:

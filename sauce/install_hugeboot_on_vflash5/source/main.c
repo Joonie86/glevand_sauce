@@ -36,7 +36,7 @@ static const char *petitboot_path[] = {
 	"/dev_usb001/" PETITBOOT_FILENAME
 };
 
-//open_petitboot
+/* open_petitboot */
 static FILE *open_petitboot(void){
 #define N(a)	(sizeof(a) / sizeof(a[0]))
 
@@ -63,7 +63,7 @@ static FILE *open_petitboot(void){
 #undef N
 }
 
-//main
+/* main */
 int main(int argc, char **argv){
 #define MIN(a, b)	((a) <= (b) ? (a) : (b))
 

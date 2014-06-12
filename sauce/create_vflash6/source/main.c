@@ -25,7 +25,7 @@
 #define VFLASH_REGION_SECTOR_COUNT							0x200ull
 #define VFLASH_REGION_LAID											0x1070000002000001ull
 
-//main
+/* main */
 int main(int argc, char **argv){
 	uint32_t dev_handle;
 	uint64_t region_id;

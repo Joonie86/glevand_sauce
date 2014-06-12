@@ -41,7 +41,7 @@
 #define VFLASH_REGION_LPAR_AUTH_ID											0x1070000002000001ull /* GameOS LPAR auth id */
 #define VFLASH_REGION_ACL																0x3ull
 
-//setup_vflash
+/* setup_vflash */
 static int setup_vflash(void){
 	uint32_t dev_handle;
 	int start_sector, sector_count;
@@ -126,7 +126,7 @@ done:
 	return result;
 }
 
-//main
+/* main */
 int main(int argc, char **argv){
 	int result;
 

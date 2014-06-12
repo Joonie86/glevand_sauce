@@ -37,7 +37,6 @@ static const char *dump_path[] = {
 	"/dev_usb001/" DUMP_FILENAME
 };
 
-//open_dump
 static FILE *open_dump(void){
 #define N(a)	(sizeof(a) / sizeof(a[0]))
 
@@ -64,7 +63,7 @@ static FILE *open_dump(void){
 #undef N
 }
 
-//main
+/* main */
 int main(int argc, char **argv){
 	uint32_t dev_handle;
 	FILE *fp;

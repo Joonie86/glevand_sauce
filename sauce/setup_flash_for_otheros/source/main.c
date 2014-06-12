@@ -57,7 +57,7 @@
 #define FLASH_REGION_LPAR_AUTH_ID											0x1070000002000001ull /* GameOS LPAR auth id */
 #define FLASH_REGION_ACL															0x3ull
 
-//is_vflash_on
+/* is_vflash_on */
 static int is_vflash_on(void){
 	uint8_t flag;
 
@@ -66,7 +66,7 @@ static int is_vflash_on(void){
 	return !(flag & 0x1);
 }
 
-//setup_vflash
+/* setup_vflash */
 static int setup_vflash(void){
 	uint32_t dev_handle;
 	int start_sector, sector_count;
@@ -145,7 +145,7 @@ done:
 	return result;
 }
 
-//setup_flash
+/* setup_flash */
 static int setup_flash(void)
 {
 	uint32_t dev_handle;
@@ -234,7 +234,8 @@ done:
 
 	return result;
 }
-//main
+
+/* main */
 int main(int argc, char **argv)
 {
 	int vflash_on, result;

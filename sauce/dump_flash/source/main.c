@@ -211,7 +211,6 @@ int dump_nor_flash(void)
 	dev_handle = 0;
 	fp = NULL;
 	
-	//device zugriff (handle)
 	result = lv2_storage_open(NOR_FLASH_DEV_ID, &dev_handle);
 	if (result) {
 		PRINTF("%s:%d: lv2_storage_open failed (0x%08x)\n", __func__, __LINE__, result);
@@ -222,8 +221,6 @@ int dump_nor_flash(void)
 	if (!fp)
 		goto done;
 
-
-	//anzahl der sektoren des device auslesen
 	result = lv2_storage_get_device_info(NOR_FLASH_DEV_ID, &info);
 	if (result) {
 		PRINTF("%s:%d: lv2_storage_get_device_info failed (0x%08x)\n", __func__, __LINE__, result);

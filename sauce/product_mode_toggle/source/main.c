@@ -26,7 +26,7 @@
 #define UPDATE_MGR_PACKET_ID_WRITE_EPROM	0x600c
 #define EPROM_PRODUCT_MODE_OFFSET					0x48c07
 
-//main
+/* main */
 int main(int argc, char **argv){
 	uint8_t value;
 	int result;

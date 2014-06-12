@@ -17,9 +17,7 @@
 #include <lv1_hvcall.h>
 
 
-/***********************************************************************
-* mm_map_lpar_memory_region
-***********************************************************************/
+/* mm_map_lpar_memory_region */
 int mm_map_lpar_memory_region(uint64_t vas_id, uint64_t va_start_addr, uint64_t lpar_start_addr,
 	uint64_t size, uint64_t page_shift, uint64_t vflags, uint64_t rflags)
 {
@@ -38,9 +36,7 @@ int mm_map_lpar_memory_region(uint64_t vas_id, uint64_t va_start_addr, uint64_t 
 	return 0;
 }
  
-/***********************************************************************
-* mm_insert_htab_entry
-***********************************************************************/
+/* mm_insert_htab_entry */
 int mm_insert_htab_entry(uint64_t vas_id, uint64_t va_addr, uint64_t lpar_addr,
 	uint64_t page_shift, uint64_t vflags, uint64_t rflags, uint64_t *index)
 {
